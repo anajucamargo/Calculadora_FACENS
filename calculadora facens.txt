@@ -1,0 +1,68 @@
+//chama a blioteca
+#include<iostream>
+#include<string>
+#include<stdlib.h>
+using namespace std;
+
+//anuncia a variavel
+int main() {
+    char continuar='s';
+    while (continuar=='s'||continuar=='S'){
+        string nome, RA;
+         //anuncia as variaveis
+        double ac1, ac2, acf,ag, nota1, nota2, nota3, nota4;
+        cout<<"digite o nome do aluno >>> ";
+        cin>>nome;
+        cout<<"digite o RA do aluno >>> ";
+        cin>>RA;
+        //mostra ao usuario a nota da ac1
+        cout << "digite a sua primeira nota da ac1 >>> ";
+        //valor da ac1
+        cin >> ac1;
+        //mostra ao usuario a nota ac2
+        cout << "digite a sua segunda nota da ac2 >>> ";
+        //valor da ac2
+        cin >> ac2;
+        //mostra ao usuario a nota da af
+        cout << "digite a sua terceira nota da af >>> ";
+        // valor da af
+        cin >> acf;
+        cout<<"digite a sua quarta nota da ag >>> ";
+        cin>>ag;
+
+        //calcula os valores de cada nota
+         nota1 = ac1 * 0.15;
+         nota2 = ac2 * 0.35;
+         nota3 = acf * 0.40;
+         nota4 = ag * 0.10;
+         //faz a media de todas as notas
+        double soma = (nota1 + nota2 + nota3+nota4);
+        //o que mostra ao usuario
+        cout<<nome<<endl;
+        cout<<RA<<endl;
+        cout << "a sua media no semestre foi: " << soma << endl << endl;
+        switch((int)soma){
+            case 10:
+            cout<<"Parabés!"<<endl;
+            break;
+            case 9:
+            case 8:
+            case 7:
+            case 6:
+            case 5:
+            cout<<"Você passou de ano!"<<endl;
+            break;
+            case 4:
+            case 3:
+            cout<<"Você esta em recuperação!"<<endl;
+            break;
+            default:
+            cout<<"Você foi reprovado!"<<endl;
+            break;
+        }
+        cout<<"deseja continuar?(s/n) >>> ";
+        cin>>continuar;
+       
+    }
+    return 0;
+}
